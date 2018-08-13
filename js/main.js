@@ -36,7 +36,7 @@ function setMap(){
 	
 	//projection selection, albersusa does not take center or rotate 	
 	var projection = d3.geoAlbersUsa()
-		.translate([width/2,height/2]);
+		.translate([width/3,height/3]);
 	
 	//projection path
 	var path = d3.geoPath()
