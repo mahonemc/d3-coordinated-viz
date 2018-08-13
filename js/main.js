@@ -25,7 +25,7 @@ window.onload = setMap();
 
 function setMap(){
 	  //map frame dimensions
-    var width = window.innerWidth * 0.54,
+    var width = window.innerWidth * 0.57,
         height = 575;
 	
 	var map = d3.select("body")
