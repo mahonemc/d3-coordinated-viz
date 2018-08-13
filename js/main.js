@@ -224,10 +224,10 @@ function setMap(){
 		
         //create a text element for the chart title
         var chartTitle = chart.append("text")
-        .attr("x", 70)
+        .attr("x", 85)
         .attr("y", 30)
         .attr("class", "chartTitle")
-        .text("Age-Adjusted No. of Deaths '" + expressed + "' in U.S.");
+        .text("Age-Adjusted Deaths from '" + expressed + "' in U.S.");
 
         //create vertical axis generator
         var yAxis = d3.axisLeft()
@@ -325,7 +325,7 @@ function updateChart(bars, n, colorScale){
 		
         })
 	var chartTitle = d3.select(".chartTitle")
-	.text("Age-Adjusted No. of Deaths Caused by '" + expressed + "' in U.S.");
+	.text("Age-Adjusted Deaths from '" + expressed + "' in U.S.");
 };
 	// highlight toggle
 function highlight(props){
