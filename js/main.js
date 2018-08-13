@@ -17,16 +17,16 @@
 	//create a scale to size bars proportionally to frame and for axis
     var yScale = d3.scaleLinear()
         .range([463, 0])
-        .domain([0, 300]);
-
+        .domain([0, 240]);
 	
+		
 //begin script when window loads
 window.onload = setMap();
 
 function setMap(){
 	  //map frame dimensions
     var width = window.innerWidth * 0.55,
-        height = 600;
+        height = 575;
 	
 	var map = d3.select("body")
         .append("svg")
@@ -72,6 +72,8 @@ function setMap(){
 		
 		//add enumeration units to the map
         setEnumerationUnits(topjsonData, map, path, colorScale);
+		
+		
 		
 	      
 	}); //csv close
@@ -245,15 +247,16 @@ function setMap(){
         .attr("transform", translate);
 		
 		 //set bar positions, heights, and colors
-    updateChart(bars, csvData.length, colorScale);
-}; //end of setChart()
+		updateChart(bars, csvData.length, colorScale);
+	   
+	}; //end of setChart()
 
 	//function to create a dropdown menu for attribute selection
     function createDropdown(csvData){
     //add select element
     var dropdown = d3.select("body")
         .append("select")
-        .attr("class", "dropdown")
+        .attr("class", "dropdown1")
         .on("change", function(){
             changeAttribute(this.value, csvData)
 			
@@ -263,7 +266,7 @@ function setMap(){
         var titleOption = dropdown.append("option")
         .attr("class", "titleOption")
         .attr("disabled", "true")
-        .text("Select Attribute");
+        .text("Select Cause of Death");
 
         //add attribute name options
         var attrOptions = dropdown.selectAll("attrOptions")
@@ -373,13 +376,27 @@ function setLabel(props){
 };
 	//function to move info label with mouse
 function moveLabel(){
+	
+	var labelWidth = d3.select(".infolabel")
+        .node()
+        .getBoundingClientRect()
+        .width;
+
     //use coordinates of mousemove event to set label coordinates
-    var x = d3.event.clientX + 10,
-        y = d3.event.clientY - 75;
+    var x1 = d3.event.clientX,
+        y1 = d3.event.clientY - 7,
+        x2 = d3.event.clientX - labelWidth - 10,
+        y2 = d3.event.clientY + 2;
+    //horizontal label coordinate, testing for overflow
+    var x = d3.event.clientX > window.innerWidth - labelWidth - 20 ? x2 : x1; 
+    //vertical label coordinate, testing for overflow
+    var y = d3.event.clientY < 75 ? y2 : y1; 
 
     d3.select(".infolabel")
         .style("left", x + "px")
         .style("top", y + "px");
 };
+
+	
 	
 })(); //last line of main.js

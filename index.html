@@ -6,25 +6,38 @@
 		<title></title>
 
 		<!--put your external stylesheet links here-->
+		<link rel="stylesheet" href="lib/bootstrap/bootstrap.css">
 		<link rel="stylesheet" href="css/style.css">
-		<!--[if IE<9]>
+				<!--[if IE<9]>
 			<link rel="stylesheet" href="css/style.ie.css">
 		<![endif]-->
 	</head>
-
+	
 	<body>
-		<!--put your initial page content here-->
-     
+		<div class="jumbotron text-center" style="margin-bottom:0">
+  <h1 class="display-6">Mortality in the United States:</h1>
+			<p><i>What is killing us? And where?</i></p> 
+</div>
+	
+		<div class="container">
+  <div class="row">
+    <div class="col-lg-150">
+		<h2><b>CDC Mortality by Cause : 2015</b></h2><p>What is the connection between death and geographic location in the United States? Are there patterns? Certainly, many of us have wondered if there is a connection. For example, many assume that death rates for Alzheimer's Disease would be higher in Florida, as it is a state with an older population. However, the data shows our assumptions may not always be in line with the data. Click through the dropdown below to see a choropleth map of different causes of death in 2015 for the United States. Darker colors indicate a higher value. This can also be evaluated with the accompanying bar chart. Source: <a href="https://www.cdc.gov/nchs/fastats/deaths.htm" target="_blank">U.S. Centers for Disease Control</a></p>
+	  </div>
+			</div>
+		</div>
+				
 		
-			
-		<!--you can also use this space for internal scripts or stylesheets;
-		place these within <script> or <style> tags-->
-
 		<!--put your external script links here-->
 		<script type="text/javascript" src="lib/d3-master/d3.js"></script>
 		<script type="text/javascript" src="lib/topojson-master/topojson.js"></script>
 		<script type='text/javascript' src="lib/d3-queue/d3-queue.js"></script>
+		<script type="text/javascript" src="lib/crossfilter-master/crossfilter.js"></script>
 		<script src='https://unpkg.com/simple-statistics@6.1.0/dist/simple-statistics.min.js'></script>
 		<script type="text/javascript" src="js/main.js"></script>
+		<script type="text/javascript" src="lib/bootstrap/bootstrap.js"></script>
+		
+		
+
 	</body>
 </html>
